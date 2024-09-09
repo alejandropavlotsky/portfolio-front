@@ -1,9 +1,10 @@
+import { Header } from "./components/Header";
 import "./styles/sass/main.scss";
 
 function App() {
   return (
     <>
-      <h1>Hola Mundo!</h1>
+      <Header />
     </>
   );
 }

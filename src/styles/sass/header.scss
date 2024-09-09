@@ -1,0 +1,39 @@
+@import "../partials/reset";
+@import "../partials/mixins";
+@import "../partials/variables";
+
+#header {
+  background-color: $glass-light;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px $glass-dark;
+
+  nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        list-style: none;
+        flex: 1;
+        text-align: center;
+        a {
+          margin: 0 1.5rem;
+          font-size: 1.1rem;
+          text-transform: uppercase;
+          position: relative;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
