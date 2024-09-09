@@ -1,0 +1,21 @@
+@mixin glass-effect($color, $blur, $opacity) {
+  background: $color;
+  backdrop-filter: blur($blur);
+  opacity: $opacity;
+  border-radius: 15px;
+}
+
+@mixin minimal-button($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: lighten($bg-color, 10%);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+  }
+}

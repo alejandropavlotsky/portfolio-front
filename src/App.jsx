@@ -1,3 +1,5 @@
+import "./styles/sass/main.scss";
+
 function App() {
   return (
     <>

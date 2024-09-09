@@ -1,0 +1,46 @@
+@import "./variables";
+
+html{
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $font-stack;
+  background-color: $color-base-dark;
+  color: $text-light;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+#root{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+h1, h2 {
+  color: $text-light;
+}
+
+a {
+  color: $color-soft-accent;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($color-soft-accent, 10%);
+  }
+}
+
+button {
+  background-color: $color-accent;
+  color: $text-light;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  @include minimal-button($color-soft-accent, $color-accent);
+
+  &:hover {
+    background-color: darken($color-accent, 10%);
+  }
+}
