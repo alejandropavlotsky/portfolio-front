@@ -14,6 +14,7 @@
   right: 0;
   z-index: 100;
   box-shadow: 0 4px 8px $glass-dark;
+  transition: .3s all ease-in-out;
 
   nav {
     ul {
@@ -36,4 +37,9 @@
       }
     }
   }
+}
+#header-dark{
+  @extend #header;
+  background-color: $text-inverted;
+  transition: .3s all ease-in-out;
 }

@@ -1,8 +1,23 @@
+import { useEffect, useState } from "react";
 import "../styles/sass/header.scss"
 
 export const Header = () => {
+
+  const [navBar, setNavBar] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        setNavBar(true);
+      } else {
+        setNavBar(false);
+      }
+    })
+  }, [])
+
+
   return (
-    <header id="header">
+    <header  id={navBar ? 'header-dark' : 'header'}>
       <nav>
         <ul>
           <li>
