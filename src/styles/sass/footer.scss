@@ -1,0 +1,21 @@
+@import "../partials/reset";
+@import "../partials/mixins";
+@import "../partials/variables";
+
+footer {
+  background-color: $glass-light;
+  color: $color-accent;
+  padding: 2rem 1rem;
+  text-align: center;
+
+  p {
+    margin: 0.5rem 0;
+    a ,
+    span{
+      color: $text-light;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
