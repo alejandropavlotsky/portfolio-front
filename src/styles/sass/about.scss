@@ -49,3 +49,28 @@
     line-height: 1.8;
   }
 }
+
+@media screen and (max-width: 660px) {
+  #about{
+    padding: 1rem;
+    header{
+      h1, h2 {
+        max-width: 100%;
+        font-size: 2rem;
+        text-align: center;
+      }
+      h2{
+        font-size: 1rem;
+      }
+      img{
+        position: relative;
+        top: 0;
+        right: 0;
+        transform: translateY(0);
+      }
+    }
+    p{
+      max-width: 100%;
+    }
+  }
+}

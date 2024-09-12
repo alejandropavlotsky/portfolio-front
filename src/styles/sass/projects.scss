@@ -57,3 +57,11 @@
     }
   }
 }
+@media screen and (max-width: 660px) {
+  #projects{
+    padding: 1rem;
+    .project-item{
+      padding: 1rem;
+    }
+  }
+}

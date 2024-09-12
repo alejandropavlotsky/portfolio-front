@@ -5,9 +5,10 @@ import { LANGUAGES } from "../constants";
 import "../styles/sass/header.scss";
 
 export const Header = () => {
-
   const { i18n, t } = useTranslation();
   const [navBar, setNavBar] = useState(false);
+  const [hamburger, setHamburger] = useState(true);
+  const [navMenu, setNavMenu] = useState(true)
 
   const onChangeLang = (e) => {
     const lang_code = e.target.value;
@@ -24,9 +25,13 @@ export const Header = () => {
     });
   }, []);
 
+  const showHideNav = () => {
+    setNavMenu(!navMenu)
+  }
+
   return (
     <header id={navBar ? "header-dark" : "header"}>
-      <nav>
+      <nav className={navMenu ? 'show' : ''}>
         <ul>
           <li>
             <a href="#about">{t("about")}</a>
@@ -48,6 +53,14 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
+      {hamburger && (
+        <div className={navMenu ? 'close' : 'hamburger'} onClick={showHideNav}>
+          <div>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
