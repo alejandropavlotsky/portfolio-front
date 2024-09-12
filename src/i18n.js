@@ -26,7 +26,8 @@ i18n
           email: 'Email',
           phone: 'Teléfono',
           city: 'Madrid, España',
-          location: 'Ubicación'
+          location: 'Ubicación',
+          loading: 'Cargando...'
         }
       },
       en: {
@@ -41,7 +42,8 @@ i18n
           email: 'Email',
           phone: 'Phone',
           city: 'Madrid, Spain',
-          location: 'Location'
+          location: 'Location',
+          loading: 'Loading...'
         }
       }
     },

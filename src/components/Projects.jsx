@@ -1,33 +1,41 @@
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from 'react';
-import projectsService from '../services/projects';
+import { useEffect, useState } from "react";
+import projectsService from "../services/projects";
 import "../styles/sass/projects.scss";
-
+import { Card } from "./Card";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
-
-  const { t, i18n } = useTranslation();
-  const [projects, setProjects] = useState([])
+  const { t } = useTranslation();
+  const [projects, setProjects] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
-    projectsService.getAll().then((response) => {
-      setProjects(response);
-    });
+      projectsService.getAll().then((response) => {
+        setProjects(response);
+        setLoader(false);
+      });
   }, []);
-
 
   return (
     <section id="projects">
-      <h2>{ t('projects') }</h2>
+      {loader ? (
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          {t("loading")}
+        </motion.h2>
+      ) : (
+        <motion.h2 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+          {t("projects")}
+        </motion.h2>
+      )}
       <div className="project-list">
         {projects.map((project, index) => (
-          <div key={index} className="project-item">
-            <h3>{project.name}</h3>
-            <p>{ project.description[i18n.language] }</p>
-            <a href={project.url} target="_blank" rel="noopener noreferrer">
-              {t('see')}
-            </a>
-          </div>
+          <Card
+            key={index}
+            name={project.name}
+            description={project.description}
+            url={project.url}
+          />
         ))}
       </div>
     </section>

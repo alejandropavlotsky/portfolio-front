@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { LANGUAGES } from "../constants";
+
 import "../styles/sass/header.scss";
 
 export const Header = () => {
