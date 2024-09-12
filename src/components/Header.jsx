@@ -4,7 +4,6 @@ import { LANGUAGES } from "../constants";
 import "../styles/sass/header.scss";
 
 export const Header = () => {
-  const isActive = ({ isActive }) => `link ${isActive} ?'active' : ''`;
 
   const { i18n, t } = useTranslation();
   const [navBar, setNavBar] = useState(false);

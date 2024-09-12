@@ -6,7 +6,7 @@ import "../styles/sass/projects.scss";
 
 export const Projects = () => {
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const Projects = () => {
         {projects.map((project, index) => (
           <div key={index} className="project-item">
             <h3>{project.name}</h3>
-            <p>{ project.description }</p>
+            <p>{ project.description[i18n.language] }</p>
             <a href={project.url} target="_blank" rel="noopener noreferrer">
               {t('see')}
             </a>
